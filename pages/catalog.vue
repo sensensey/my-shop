@@ -1,0 +1,1 @@
+<template><h1>Catalog Page</h1></template>

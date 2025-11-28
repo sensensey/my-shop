@@ -1,0 +1,193 @@
+/* ============================
+   GLOBAL CONTAINER
+============================ */
+.wide-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+/* ============================
+   HEADER / NAV / PAGE
+============================ */
+.site-header {
+  background: white;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.header-inner {
+  max-width: 1250px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.menu-bar {
+  max-width: 1250px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding: 10px 0;
+}
+
+.page-wrapper {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+
+/* ============================
+   HERO DOTS
+============================ */
+.hero-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+  gap: 6px;
+}
+
+.hero-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ccc;
+}
+
+.hero-dot--active {
+  background: #ff4081;
+}
+
+/* ============================
+   NEWSLETTER
+============================ */
+.newsletter-section {
+  width: 100%;
+  background: #eee4ff; /* Watsons tarzı mora yakın */
+  padding: 40px 0;
+}
+
+
+.newsletter-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ============================
+   FOOTER
+============================ */
+.site-footer {
+  background: #f8f8f8;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 40px;
+}
+
+/* =====================================================
+   📱📱📱 MOBILE RESPONSIVE — WATSONS STYLE
+===================================================== */
+
+@media (max-width: 1024px) {
+  .menu-bar {
+    gap: 18px;
+  }
+
+  .header-inner {
+    padding: 0 10px;
+  }
+
+  .hero-wrapper {
+    height: 360px !important;
+    padding: 20px 20px !important;
+  }
+}
+
+/* ---------- TABLET ---------- */
+@media (max-width: 768px) {
+
+  /* Header */
+  .header-inner {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Menu hamburger */
+  .menu-bar {
+    display: none !important;
+  }
+
+  /* Hero */
+  .hero-wrapper {
+    height: auto !important;
+    flex-direction: column;
+    padding: 20px !important;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 !important;
+  }
+
+  .hero-text {
+    max-width: 100% !important;
+  }
+
+  .hero-image {
+    width: 80% !important;
+    margin-top: 10px;
+  }
+
+  /* Products 2 columns */
+  .product-row {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px !important;
+  }
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 480px) {
+
+  /* Header */
+  .header-inner {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  /* Search full width */
+  .search-wrapper {
+    width: 100% !important;
+  }
+
+  /* Hero slider */
+  .hero-wrapper {
+    padding: 16px !important;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-image {
+    width: 100% !important;
+  }
+
+  /* Products 1 column */
+  .product-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Checkout stacked */
+  .checkout-container {
+    flex-direction: column !important;
+  }
+}
