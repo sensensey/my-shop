@@ -177,4 +177,59 @@ const goToSlide = (i) => (currentIndex.value = i)
   width: 22px;
   background: #ff3e90;
 }
+
+@media (max-width: 768px) {
+
+  .hero-wrapper {
+    width: 100%;
+    height: auto;
+    padding: 20px 15px;
+    flex-direction: column;
+    background: none; /* gradient kaldırmak istiyorsan */
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 0;
+    gap: 20px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-text .title {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .hero-text .subtitle {
+    font-size: 14px;
+  }
+
+  .hero-text .desc {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  .hero-image-wrapper {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-image {
+    width: 90%;
+    max-width: 350px;
+    height: auto;
+  }
+
+  .hero-arrow {
+    display: none; /* mobilde okları gizliyoruz */
+  }
+
+  .dots {
+    margin-top: 10px;
+  }
+}
 </style>
