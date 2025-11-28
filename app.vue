@@ -4,11 +4,11 @@
     <header class="site-header">
       <div class="header-inner">
 
-        <MobileMenu />
+        <MobileMenu class="mobile-menu-btn" />
 
         <NuxtLink to="/" class="logo">LOGO</NuxtLink>
 
-        <SearchBar :products="productsForSearch" />
+        <SearchBar :products="productsForSearch" class="search-area" />
 
         <NuxtLink to="/checkout" class="cart-link">
           🛒 ({{ cart.totalCount }})

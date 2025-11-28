@@ -1,13 +1,10 @@
 <template>
   <div class="hero-wrapper">
 
-    <!-- arrow 1 -->
     <button class="hero-arrow left" @click="prevSlide">‹</button>
 
-    <!-- image -->
     <img :src="slides[currentIndex].image" class="hero-image-full" />
 
-    <!-- overlay -->
     <div class="hero-text">
       <h4 class="subtitle">{{ slides[currentIndex].subtitle }}</h4>
       <h1 class="title">{{ slides[currentIndex].title }}</h1>
@@ -15,7 +12,6 @@
 
       <button class="shop-btn" @click="$emit('shop-now')">Shop Now</button>
 
-      <!-- dots -->
       <div class="dots">
         <span
           v-for="(s,i) in slides"
@@ -27,7 +23,6 @@
       </div>
     </div>
 
-    <!-- arrow 2 -->
     <button class="hero-arrow right" @click="nextSlide">›</button>
 
   </div>
@@ -74,7 +69,7 @@ const goToSlide = (i) => (currentIndex.value = i)
 </script>
 
 <style scoped>
-/* === hero main area === */
+/* === MAIN WRAPPER === */
 .hero-wrapper {
   position: relative;
   width: 100%;
@@ -83,60 +78,57 @@ const goToSlide = (i) => (currentIndex.value = i)
   overflow: hidden;
 }
 
-/* === full image === */
+/* === IMAGE === */
 .hero-image-full {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
-/* === write overlay === */
+/* === TEXT OVERLAY (MASAÜSTÜ) === */
 .hero-text {
   position: absolute;
   top: 50%;
-  left: 80px;
+  left: 50px;
   transform: translateY(-50%);
   color: #fff;
   max-width: 420px;
   text-shadow: 0 2px 8px rgba(0,0,0,0.35);
 }
 
-.subtitle {
-  font-size: 13px;
-  font-weight: 700;
-  margin-bottom: 6px;
-  opacity: 0.95;
-}
+/* FONTLAR */
+.title { font-size: 34px; font-weight: 700; }
+.subtitle { font-size: 12px; font-weight: 700; }
+.desc { font-size: 14px; opacity: 0.9; }
 
-.title {
-  font-size: 36px;
-  font-weight: 700;
-  line-height: 1.2;
-  margin: 6px 0 10px;
-}
-
-.desc {
-  margin-top: 8px;
-  line-height: 1.4;
-  font-size: 14px;
-  opacity: 0.9;
-}
-
-/* === shop now button === */
+/* BUTTON */
 .shop-btn {
   margin-top: 18px;
   background: #ff3e90;
   color: white;
-  border: none;
   padding: 10px 26px;
+  border: none;
   border-radius: 4px;
-  font-weight: 600;
-  cursor: pointer;
   font-size: 14px;
+  cursor: pointer;
 }
 
-/* === arrows === */
+/* DOTS */
+.dots { margin-top: 20px; }
+.dot {
+  width: 8px;
+  height: 8px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 20px;
+  margin-right: 6px;
+  display: inline-block;
+}
+.dot.active {
+  width: 20px;
+  background: #ff3e90;
+}
+
+/* === ARROWS === */
 .hero-arrow {
   position: absolute;
   top: 50%;
@@ -149,87 +141,51 @@ const goToSlide = (i) => (currentIndex.value = i)
   border-radius: 50%;
   color: #444;
   cursor: pointer;
-  backdrop-filter: blur(4px);
 }
-
 .hero-arrow.left { left: 18px; }
 .hero-arrow.right { right: 18px; }
 
-.hero-arrow:hover { background: white; }
 
-/* === dots === */
-.dots {
-  margin-top: 22px;
-}
-
-.dot {
-  width: 9px;
-  height: 9px;
-  background: rgba(255,255,255,0.6);
-  border-radius: 20px;
-  display: inline-block;
-  margin-right: 8px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.dot.active {
-  width: 22px;
-  background: #ff3e90;
-}
-
+/* =============== MOBİL DÜZELTME =============== */
 @media (max-width: 768px) {
 
   .hero-wrapper {
-    width: 100%;
     height: auto;
-    padding: 20px 15px;
-    flex-direction: column;
-    background: none; /* gradient kaldırmak istiyorsan */
   }
 
-  .hero-inner {
-    flex-direction: column;
-    text-align: center;
-    padding: 0;
-    gap: 20px;
+  .hero-image-full {
+    height: auto;
+    max-height: 350px;
+    object-fit: cover;
   }
 
+  /* TEXT tamamen alta çekiliyor */
   .hero-text {
+    position: static;
+    transform: none;
+    margin-top: 10px;
+    text-align: center;
+    padding: 0 16px;
     max-width: 100%;
   }
 
-  .hero-text .title {
+  .title {
     font-size: 22px;
-    line-height: 28px;
+    line-height: 26px;
+    margin-bottom: 6px;
   }
 
-  .hero-text .subtitle {
-    font-size: 14px;
-  }
+  .subtitle { font-size: 13px; }
+  .desc { font-size: 13px; line-height: 18px; }
 
-  .hero-text .desc {
-    font-size: 13px;
-    line-height: 20px;
-  }
-
-  .hero-image-wrapper {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .hero-image {
-    width: 90%;
-    max-width: 350px;
-    height: auto;
-  }
-
+  /* Mobilde okları kaldırıyoruz */
   .hero-arrow {
-    display: none; /* mobilde okları gizliyoruz */
+    display: none;
   }
 
   .dots {
-    margin-top: 10px;
+    justify-content: center;
+    margin-top: 12px;
   }
 }
 </style>
