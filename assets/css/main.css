@@ -68,10 +68,9 @@
 ============================ */
 .newsletter-section {
   width: 100%;
-  background: #eee4ff; /* Watsons tarzı mora yakın */
+  background: #eee4ff;
   padding: 40px 0;
 }
-
 
 .newsletter-inner {
   display: flex;
@@ -82,16 +81,62 @@
 }
 
 /* ============================
-   FOOTER
+   HERO SLIDER FIXES (NEW)
 ============================ */
-.site-footer {
-  background: #f8f8f8;
-  border-top: 1px solid #e0e0e0;
-  margin-top: 40px;
+
+/* Slider ana container */
+.hero-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  overflow: hidden;
+}
+
+/* Resim */
+.hero-image-full {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Yazı alanı */
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 60px;
+  transform: translateY(-50%);
+  color: white;
+  max-width: 380px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+}
+
+/* Ok tuşları */
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.75);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 26px;
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+}
+
+.hero-arrow.left { left: 16px; }
+.hero-arrow.right { right: 16px; }
+
+/* ACTİVE DOT */
+.dot.active {
+  background: #ff3e90 !important;
+  width: 20px !important;
 }
 
 /* =====================================================
-   📱📱📱 MOBILE RESPONSIVE — WATSONS STYLE
+   📱📱📱 MOBILE RESPONSIVE — FIXED HERO SLIDER
 ===================================================== */
 
 @media (max-width: 1024px) {
@@ -104,8 +149,8 @@
   }
 
   .hero-wrapper {
-    height: 360px !important;
-    padding: 20px 20px !important;
+    height: auto;
+    padding: 0;
   }
 }
 
@@ -118,34 +163,52 @@
     gap: 12px;
   }
 
-  /* Menu hamburger */
+  /* Menü kapansın */
   .menu-bar {
     display: none !important;
   }
 
-  /* Hero */
+  /* HERO */
   .hero-wrapper {
-    height: auto !important;
-    flex-direction: column;
-    padding: 20px !important;
+    height: auto;
   }
 
-  .hero-inner {
-    flex-direction: column;
-    text-align: center;
-    padding: 0 !important;
-  }
-
+  /* Mobil Hero */
   .hero-text {
-    max-width: 100% !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    text-align: center;
   }
 
-  .hero-image {
-    width: 80% !important;
-    margin-top: 10px;
+  .hero-text .title {
+    font-size: 22px;
+    line-height: 26px;
   }
 
-  /* Products 2 columns */
+  .hero-text .subtitle {
+    font-size: 14px;
+  }
+
+  .hero-text .desc {
+    font-size: 13px;
+  }
+
+  /* Oklar mobilde görünsün */
+  .hero-arrow {
+    display: block !important;
+    top: 55%;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+  }
+
+  .hero-arrow.left { left: 8px; }
+  .hero-arrow.right { right: 8px; }
+
+  /* Ürünler 2 sütun */
   .product-row {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr);
@@ -153,7 +216,7 @@
   }
 }
 
-/* ---------- MOBILE ---------- */
+/* ---------- MOBILE SMALL ---------- */
 @media (max-width: 480px) {
 
   /* Header */
@@ -163,30 +226,26 @@
     text-align: center;
   }
 
-  /* Search full width */
   .search-wrapper {
     width: 100% !important;
   }
 
-  /* Hero slider */
-  .hero-wrapper {
-    padding: 16px !important;
-  }
-
+  /* Hero */
   .hero-text {
-    text-align: center;
+    max-width: 90%;
   }
 
-  .hero-image {
-    width: 100% !important;
+  .hero-image-full {
+    width: 100%;
+    height: auto;
   }
 
-  /* Products 1 column */
+  /* Ürün tek sütun */
   .product-row {
     grid-template-columns: 1fr !important;
   }
 
-  /* Checkout stacked */
+  /* Checkout */
   .checkout-container {
     flex-direction: column !important;
   }
