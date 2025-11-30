@@ -69,7 +69,6 @@ const goToSlide = (i) => (currentIndex.value = i)
 </script>
 
 <style scoped>
-/* === MAIN WRAPPER === */
 .hero-wrapper {
   position: relative;
   width: 100%;
@@ -78,14 +77,12 @@ const goToSlide = (i) => (currentIndex.value = i)
   overflow: hidden;
 }
 
-/* === IMAGE === */
 .hero-image-full {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* === TEXT OVERLAY (MASAÜSTÜ) === */
 .hero-text {
   position: absolute;
   top: 50%;
@@ -96,12 +93,10 @@ const goToSlide = (i) => (currentIndex.value = i)
   text-shadow: 0 2px 8px rgba(0,0,0,0.35);
 }
 
-/* FONTLAR */
 .title { font-size: 34px; font-weight: 700; }
 .subtitle { font-size: 12px; font-weight: 700; }
 .desc { font-size: 14px; opacity: 0.9; }
 
-/* BUTTON */
 .shop-btn {
   margin-top: 18px;
   background: #ff3e90;
@@ -113,7 +108,6 @@ const goToSlide = (i) => (currentIndex.value = i)
   cursor: pointer;
 }
 
-/* DOTS */
 .dots { margin-top: 20px; }
 .dot {
   width: 8px;
@@ -128,7 +122,6 @@ const goToSlide = (i) => (currentIndex.value = i)
   background: #ff3e90;
 }
 
-/* === ARROWS === */
 .hero-arrow {
   position: absolute;
   top: 50%;
@@ -146,7 +139,6 @@ const goToSlide = (i) => (currentIndex.value = i)
 .hero-arrow.right { right: 18px; }
 
 
-/* =============== MOBİL DÜZELTME =============== */
 @media (max-width: 768px) {
 
   .hero-wrapper {
@@ -159,7 +151,6 @@ const goToSlide = (i) => (currentIndex.value = i)
     object-fit: cover;
   }
 
-  /* TEXT tamamen alta çekiliyor */
   .hero-text {
     position: static;
     transform: none;
@@ -178,7 +169,6 @@ const goToSlide = (i) => (currentIndex.value = i)
   .subtitle { font-size: 13px; }
   .desc { font-size: 13px; line-height: 18px; }
 
-  /* Mobilde okları kaldırıyoruz */
   .hero-arrow {
     display: none;
   }

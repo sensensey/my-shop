@@ -7,7 +7,6 @@
     <div class="image-wrapper">
       <img :src="product.image" alt="" />
 
-      <!-- HOVER BAR -->
       <div class="hover-bar" v-if="hover">
         <button class="hover-btn" @click.stop="onQuickView">
           <span class="icon">👁️</span>
@@ -23,13 +22,10 @@
       </div>
     </div>
 
-    <!-- price -->
     <div class="price">{{ product.price.toFixed(2) }} TL</div>
 
-    <!-- title -->
     <div class="title">{{ product.title }}</div>
 
-    <!-- description -->
     <div class="desc">{{ product.description }}</div>
   </div>
 </template>
@@ -45,7 +41,6 @@ const props = defineProps({
   }
 })
 
-// Parent’a event göndermek için
 const emit = defineEmits(['quick-view'])
 
 const cart = useCartStore()
@@ -88,7 +83,6 @@ const onQuickView = () => {
   object-fit: contain;
 }
 
-/* --- HOVER BAR --- */
 .hover-bar {
   position: absolute;
   bottom: 0;
@@ -126,7 +120,6 @@ const onQuickView = () => {
   background: #bbbbbb;
 }
 
-/* write */
 .price {
   margin-top: 12px;
   font-size: 16px;

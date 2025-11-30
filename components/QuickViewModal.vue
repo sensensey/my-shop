@@ -1,18 +1,15 @@
 <template>
   <div class="modal" @click.self="$emit('close')">
     <div class="modal-panel">
-      <!-- Kapatma butonu -->
       <button class="close-btn" @click="$emit('close')">
         ×
       </button>
 
       <div class="modal-body">
-        <!-- SOL: GÖRSEL -->
         <div class="modal-image">
           <img :src="product.image" :alt="product.title" />
         </div>
 
-        <!-- SAĞ: BİLGİLER -->
         <div class="modal-info">
           <h2 class="modal-title">{{ product.title }}</h2>
 
@@ -24,7 +21,6 @@
             {{ product.description }}
           </p>
 
-          <!-- Quantity -->
           <div class="quantity-row">
             <span>Quantity:</span>
             <div class="quantity-controls">
@@ -34,7 +30,6 @@
             </div>
           </div>
 
-          <!-- Tek buton -->
           <div class="buttons-row">
             <button class="btn-primary" @click="handleAddToCart">
               Add to Cart
@@ -71,11 +66,9 @@ const decrement = () => {
 }
 
 const handleAddToCart = () => {
-  // quantity kadar sepete ekle
   for (let i = 0; i < quantity.value; i++) {
     cart.addToCart(props.product)
   }
-  // Sepete ekledikten sonra modalı kapat
   emit('close')
 }
 </script>
@@ -116,7 +109,6 @@ const handleAddToCart = () => {
   display: flex;
 }
 
-/* Sol taraf: görsel */
 .modal-image {
   flex: 1;
   background: #f7f7f7;
@@ -132,7 +124,6 @@ const handleAddToCart = () => {
   object-fit: contain;
 }
 
-/* Sağ taraf: bilgiler */
 .modal-info {
   flex: 1;
   padding: 24px;
@@ -156,7 +147,6 @@ const handleAddToCart = () => {
   margin-bottom: 18px;
 }
 
-/* Quantity alanı */
 .quantity-row {
   display: flex;
   align-items: center;
@@ -183,7 +173,6 @@ const handleAddToCart = () => {
   text-align: center;
 }
 
-/* Butonlar */
 .buttons-row {
   display: flex;
   gap: 10px;

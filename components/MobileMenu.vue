@@ -1,18 +1,15 @@
 <template>
   <div>
-    <!-- HAMBURGER BUTTON -->
     <button class="hamburger-btn" @click="open = !open">
       ☰
     </button>
 
-    <!-- OVERLAY -->
     <div
       v-if="open"
       class="overlay"
       @click="open = false"
     ></div>
-
-    <!-- SLIDE-IN MENU -->
+    
     <div class="mobile-menu" :class="{ show: open }">
       <button class="close-btn" @click="open = false">×</button>
 
@@ -43,7 +40,6 @@ const go = (route) => {
 </script>
 
 <style scoped>
-/* HAMBURGER BUTTON */
 .hamburger-btn {
   display: none;
   background: none;
@@ -52,14 +48,12 @@ const go = (route) => {
   cursor: pointer;
 }
 
-/* MOBILE ONLY */
 @media (max-width: 768px) {
   .hamburger-btn {
     display: block;
   }
 }
 
-/* OVERLAY */
 .overlay {
   position: fixed;
   inset: 0;
@@ -67,7 +61,6 @@ const go = (route) => {
   z-index: 1000;
 }
 
-/* SLIDE MENU */
 .mobile-menu {
   position: fixed;
   left: -260px;
@@ -85,7 +78,6 @@ const go = (route) => {
   left: 0;
 }
 
-/* MENU ITEMS */
 .menu-items {
   margin-top: 20px;
   display: flex;
@@ -107,7 +99,6 @@ const go = (route) => {
   color: #ff3399;
 }
 
-/* Close button */
 .close-btn {
   background: none;
   border: none;

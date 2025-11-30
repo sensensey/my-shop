@@ -32,10 +32,9 @@ import { ref, computed, onMounted } from "vue";
 
 const query = ref("");
 const dropdownOpen = ref(false);
-const results = ref([]); // <-- API sonuçları buraya gelecek
+const results = ref([]);
 let timeout = null;
 
-// API’den arama yapan fonksiyon
 const searchAPI = async () => {
   if (!query.value || query.value.length < 2) {
     results.value = [];
@@ -88,7 +87,6 @@ onMounted(() => {
   box-shadow: 0 0 4px rgba(143, 96, 255, 0.4);
 }
 
-/* GOOGLE GİBİ DROPDOWN */
 .search-dropdown {
   position: absolute;
   top: 44px;

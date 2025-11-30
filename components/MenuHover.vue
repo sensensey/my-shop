@@ -16,7 +16,6 @@ const props = defineProps({
 
 const router = useRouter()
 
-// temp
 const goTemp = () => {
   router.push('/temp')
 }
